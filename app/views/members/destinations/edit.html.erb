@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6 offset-3">
+      <%= render "members/shared/error_messages", resource: @destination %>
+      <p class="page-title">配送先編集</p>
+        <%= form_with model: @destination, local: true do |f| %>
+          <div class="form-group">
+            <%= f.label :postal_code, "郵便番号(ハイフンなし)" %>
+            <%= f.text_field :postal_code, class:"form-control" , maxlength: 7,minlength: 7, required: true %>
+          </div>
+          <div class="form-group">
+            <%= f.label :address, "住所" %>
+            <%= f.text_field :address, class:"form-control" ,required: true %>
+          </div>
+          <div class="form-group">
+            <%= f.label :name, "宛名" %>
+            <%= f.text_field :name, class:"form-control" ,required: true %>
+          </div>
+          <%= f.submit "編集内容を保存", class:"btn btn-success" %>
+        <% end %>
+    </div>
+  </div>
+</div>
+

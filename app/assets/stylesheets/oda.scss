@@ -1,0 +1,588 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+.btn-outline-info{
+  margin-left:10px;
+  margin-right:10px;
+}
+
+.finger{
+  width: 180px;
+  height: 250px;
+}
+
+.left-space{
+  margin-left: 250px;
+}
+
+.name{
+  position: relative;
+  font-size: 20px;
+  fontstyle: italic;
+  margin: 0px;
+  padding: 0px;
+  text-decoration: underline;
+  text-align: left;
+  list-style: none;
+  font-family: cursive;
+}
+
+.fadein {
+    opacity: 0;
+    animation: fadein 6s ease forwards;
+}
+@keyframes fadein {
+    100% {  opacity: 1;}
+}
+
+.new{
+  width:200px;
+}
+
+.txt01 {animation-delay: 3s;
+}
+
+.search-form{
+  margin-right : 3%;
+  text-align: right;
+}
+
+.see-menu{
+  text-align: right;
+  width : 10%;
+}
+.fuwafuwa {
+  animation: fuwafuwa 3s infinite ease-in-out .8s alternate;
+  background: url(no_image.jpg) no-repeat center center / 60px auto;
+  display: inline-block;
+  transition: 1.5s ease-in-out;
+  width: 200px;
+  height: 200px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+@keyframes fuwafuwa {
+  0% {
+    transform:translate(0, 0) rotate(-7deg);
+  }
+  50% {
+    transform:translate(0, -7px) rotate(0deg);
+  }
+  100% {
+    transform:translate(0, 0) rotate(7deg);
+  }
+}
+
+.fuwafuwa2{
+  animation: fuwafuwa 3s infinite ease-in-out .8s alternate;
+}
+
+#notice2{
+  margin-left:100px;
+}
+.genre-s-font{
+  font-family: cursive;
+  font-size: 25px;
+  color: #696969;
+}
+.color{
+  background-color:#ffffe0;
+  height: 100%;
+  min-height: 850px;
+}
+.back-ground{
+   background-image: url('renga_back.png');
+   width: 100%;
+   height: 100%;
+   min-height: 1000px;
+}
+
+.sold-out-message{
+  color: red;
+  font-weight: 200px;
+}
+
+.top-video{
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ min-width: 100%;
+ min-height: 100%;
+ width: 100%;
+ height: 100%;
+ z-index: -1;
+ background: url('renga_back.png')repeat;
+ background-repeat: repeat;
+ background-size: 100%;
+ position: absolute;
+}
+
+.video-wrap{
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ width: 100%;
+ height: 100vh;
+}
+
+.main-image-text{
+  position: relative;
+  z-index:2;
+  height: 1400px;
+}
+
+.product-image{
+width: 200;
+background-color:#ffffe0;
+}
+
+.heading07 {
+	position: relative;
+	padding-top: 150px;
+	padding-left: 30px;
+	font-size: 26px;
+}
+
+.heading07 span {
+	position: relative;
+	z-index: 2;
+}
+
+.heading07::before {
+  padding-top: 50px;
+	content: attr(data-en);
+	position: absolute;
+	transform: rotate(-5deg);
+	top: -20px;
+	left: 0;
+	color: rgba(29,202,255,0.8);
+	font-size: 80px;
+	font-weight: 400;
+	font-family: luxus-brut, cursive;
+	font-style: italic;
+}
+
+.sub-text{
+  padding-top: 200px;
+}
+
+.new-item-text{
+  display: inline-block;
+  color: white;
+  background-color: red;
+  font-size: 50px;
+}
+
+.s-space{
+  margin-bottom: 5px;
+}
+
+.wf-nicomoji { font-family: "Nico Moji";}
+
+.new-product{
+  margin-top:100px;
+  margin-left: 50px;
+}
+
+.welcome{
+  margin-top:26px;
+}
+
+#footer {
+  position: absolute;
+  bottom: -1050px;
+  width: 100%;
+  margin-top: 40px;
+  color: #fff;
+}
+#footer a {
+  text-decoration: none;
+  color: #fff;
+}
+#footer a:hover {
+  text-decoration: underline;
+}
+#footer .primary {
+  padding-top: 20px;
+  padding-left: 30px;
+  background: #555;
+}
+#footer .secondary {
+  display: flex;
+  padding: 40px 20px;
+  background: #444;
+}
+
+@media screen and (max-width: 767px) {
+  #footer .primary {
+    padding-top: 15px;
+    background: #333;
+  }
+  #footer .secondary {
+    display: block;
+    padding: 20px 20px;
+  }
+}
+
+.space{
+  height: 20%;
+}
+
+.text-center{
+  text-align: center;
+}
+
+a .p-name-back {
+  font-color: red;
+  width: 200px;
+  text-decoration: none;
+ }
+
+.p-name-back{
+  background-color: #fffacd;
+  border-radius: 10%;
+  font-family: cursive;
+}
+
+#footer .logo {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 767px) {
+  #footer .logo {
+    font-size: 16px;
+  }
+}
+
+.address {
+  margin: 10px 0 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .address {
+    font-size: 12px;
+  }
+}
+
+.navi-row {
+  display: flex;
+  margin-top: 40px;
+}
+#footer .navi {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#footer .navi li {
+  display: inline-block;
+  margin: 0 20px 0 0;
+  padding: 0;
+}
+#footer .navi li:first-child {
+  margin-left: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .navi-row {
+    display: block;
+    margin-top: 15px;
+  }
+  #footer .navi {
+    font-size: 12px;
+  }
+  #footer .navi li {
+    margin-top: 5px;
+    font-size: 12px;
+  }
+}
+
+#footer .sns-navi {
+  margin: 0 0 0 auto;
+  padding: 0;
+}
+
+#footer .sns-navi li {
+  display: inline-block;
+  margin: 0 20px 0 0;
+  padding: 0;
+  font-size: 20px;
+}
+
+#footer .sns-navi li:last-child {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 767px) {
+  #footer .sns-navi {
+    margin: 20px 0 0;
+    padding: 0;
+  }
+
+  #footer .sns-navi li {
+    margin: 0 20px 0 0;
+    padding: 0;
+    font-size: 18px;
+  }
+}
+
+#footer .sitenavi {
+  width: 50%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#footer .sitenavi li {
+  display: inline-block;
+  margin: 0 0 0 20px;
+  padding: 0;
+}
+
+#footer .sitenavi li:first-child {
+  margin-left: 0;
+}
+
+@media screen and (max-width: 767px) {
+  #footer .sitenavi {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+  }
+}
+
+.navbar{
+  padding: 0;
+  padding-top: 5px;
+  height: 65px;
+}
+
+#footer .copyright {
+  width: 50%;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+@media screen and (max-width: 767px) {
+  #footer .copyright {
+    width: 100%;
+    margin: 20px 0 0;
+    text-align: center;
+    font-size: 12px;
+  }
+}
+
+.login-body, {
+    height: 100%;
+    background-repeat: no-repeat;
+}
+
+.card-container.card {
+    max-width: 350px;
+    padding: 40px 40px;
+}
+
+.btn {
+    margin: 10px;
+    font-weight: 700;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+.card {
+    background-color: #F7F7F7;
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.profile-img-card {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.profile-name-card {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 0;
+    min-height: 1em;
+}
+
+.reauth-email {
+    display: block;
+    color: #404040;
+    line-height: 2;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin #inputEmail,
+.form-signin #inputPassword {
+    direction: ltr;
+    height: 44px;
+    font-size: 16px;
+}
+
+.form-signin input[type=email],
+.form-signin input[type=password],
+.form-signin input[type=text],
+.form-signin button {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin .form-control:focus {
+    border-color: rgb(104, 145, 162);
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+}
+
+.btn.btn-signin {
+    background-color: rgb(104, 145, 162);
+    padding: 0px;
+    font-weight: 700;
+    font-size: 14px;
+    height: 36px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+    -o-transition: all 0.218s;
+    -moz-transition: all 0.218s;
+    -webkit-transition: all 0.218s;
+    transition: all 0.218s;
+}
+
+.btn.btn-signin:hover,
+.btn.btn-signin:active,
+.btn.btn-signin:focus {
+    background-color: rgb(12, 97, 33);
+}
+
+.forgot-password {
+    color: rgb(104, 145, 162);
+}
+
+.forgot-password:hover,
+.forgot-password:active,
+.forgot-password:focus{
+    color: rgb(12, 97, 33);
+}
+
+.gnav {
+  flex-direction: column;
+}
+
+.border-head{
+  border-bottom: dotted;
+  border-color:#996400;
+  border-width: 100%;
+}
+
+.gnav-top{
+  margin-right:100px;
+  flex-direction: column;
+}
+
+.page-title{
+  display: inline-block;
+  font-size: 50px;
+  color: #696969;
+  font-family: cursive;
+}
+
+.head-font{
+  font-family: cursive;
+}
+
+.yoko-top{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap ;
+  justify-content: center;
+  align-items: stretch;
+  align-content: space-around;
+  text-align: center;
+  margin-right: 250px;
+}
+
+.f-awesome-buttom{
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 5px;
+}
+
+.cart-button {
+  display       : inline-block;
+  border-radius : 50%;
+  font-size     : 18pt;
+  text-align    : center;
+  cursor        : pointer;
+  padding       : 12px 12px;
+  background    : #ffffe0;
+  color         : #1a1aff;
+  line-height   : 1em;
+  transition    : .3s;
+  box-shadow    : none;
+  border        : 2px solid #ffffe0;
+}
+.cart-button:hover {
+  box-shadow    : none;
+  color         : #ffffe0;
+  background    : #1a1aff;
+}
+

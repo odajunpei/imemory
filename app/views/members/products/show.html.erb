@@ -1,0 +1,52 @@
+<div class="container">
+  <p class="page-title">item details</p>
+  <div class="row">
+    <div class="col-10 offset-2 ">
+      <table class="mt-5 table table-borderless">
+        <tbody>
+          <tr>
+            <th rowspan="6" width="250px" class="align-middle">
+              <%= attachment_image_tag @product, :image, size:"200x200", format: 'jpeg', fallback:"no_image.jpg" %>
+            </th>
+            <th width="10%">商品名</th>
+            <td><%= @product.name %></td>
+          </tr>
+          <tr>
+            <th>商品説明</th>
+            <td class= "text-break"><%= @product.introduction %></td>
+          </tr>
+          <tr>
+            <th>ジャンル</th>
+            <td><%= @product.genre.name %></td>
+          </tr>
+          <tr>
+            <th>税込価格
+            <td><%= (@product.price*$tax_rate).floor.to_s(:delimited, delimiter: ',') %>円
+          </tr>
+          <tr>
+            <td colspan="2" class="pt-5">
+              <% if @product.is_active? %>
+                <% if member_signed_in? %>
+                  <%= form_with model: @cart_product, url:cart_products_path, method: :post do |f| %>
+                    <%= f.hidden_field :product_id, value: @product.id %>
+                    <%= f.number_field :quantity, min: 1,value: 1 ,required: true %>
+                    <%= f.submit "\uf218", class: 'f-awesome-buttom cart-button pl-2' %>
+                  <% end %>
+                <% else %>
+                  <%= link_to "ログインする", member_session_path, class:"btn btn-primary" %>
+                <% end %>
+              <% else %>
+                <p class="sold-out-message">
+                  <strong>売り切れました。</strong>
+                </p>
+                  <!--<p>-->
+                  <!--予定は<strong>%= @product.id %>日後</strong>です。-->
+                  <!--</p>-->
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

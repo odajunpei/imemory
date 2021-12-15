@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-10 offset-1">
+      <p class="page-title">my page</p></br>
+      <!--<h2>登録情報</h2>-->
+      <%= link_to "登録情報を編集", members_myedit_path, class:"btn btn-success" %>
+      <table class="table">
+        <tr>
+          <th>氏名</th> <th><%= @member.last_name %> <%= @member.first_name %></th>
+        </tr>
+        <tr>
+          <th>カナ</th> <th><%= @member.last_name_kana %> <%= @member.first_name_kana %></th>
+        </tr>
+        <tr>
+          <th>郵便番号</th> <th>〒<%= add_ress(@member.postal_code) %></th>
+        </tr>
+        <tr>
+          <th>住所</th> <th><%= @member.address %></th>
+        </tr>
+        <tr>
+          <th>電話番号</th> <th><%= @member.telephone_number %></th>
+        </tr>
+        <tr>
+          <th>メールアドレス</th> <th><%= @member.email %></th>
+        </tr>
+      </table>
+      <!--<h2>配送先</h2>-->
+      <%= link_to "配送先一覧", destinations_path, class:"btn btn-primary" %></br>
+      <!--<h2>注文履歴</h2>-->
+        <%= link_to "注文履歴一覧", orders_info_path, class:"btn btn-primary" %>
+    </div>
+  </div>
+</div>

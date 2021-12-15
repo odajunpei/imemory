@@ -1,0 +1,151 @@
+// Place all the styles related to the members/cart_products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//入力フォーム
+
+input[type="number"]:focus{
+  outline: none;
+  box-shadow: none;
+}
+.form-controls{
+    display: block;
+    flex: 1 1 auto;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #333;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+#form-border{
+  border: 1px solid #333;
+}
+.field_with_errors > input {
+  border: 2px solid red;
+}
+.no-spin::-webkit-inner-spin-button,
+.no-spin::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    -moz-appearance:textfield;
+}
+.flex > form{
+  display: flex;
+}
+
+//テーブル
+
+#total-table{
+  width: 250px;
+  border:1px solid black;
+}
+.table-mini{
+  width: 1px;
+  white-space: nowrap;
+}
+#table-borders th, #table-borders td{
+  border:1px solid black;
+}
+.table-skyblue tr th,.table-skyblue > th ,#table-skyblue{
+  background-color: #d3eeff;
+}
+
+//汎用
+
+#col-left0{
+  padding-left: 0;
+}
+.status-true{
+  color: #28a745;
+}
+.status-false{
+  color: #dc3545;
+}
+//かみなり
+
+.pagination>li>a {
+  border: none;     /*枠線をなくす*/
+  color: #007bff;   /*文字の色を変える*/
+  background-color: #FFFFE0;
+}
+#page-active {
+    color: #000;
+    border-radius: 15px;     /*角を丸くする*/
+    background-color: #FFFFE0;
+}
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {
+  border-radius: 15px;    /*角を丸くする*/
+  background-color: #FFFFE0;
+  outline: none;
+}
+.pagination>li>a:focus{
+  border-radius: 15px;
+  outline: none;
+}
+.pagination{
+  justify-content: center;
+}
+#disabled{
+  background-color: #ffffe0;
+}
+.search_container> form{
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid #999;
+  display: block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  height: 2.3em;
+  width: 300px;
+  overflow: hidden;
+  background-color: #FFF;
+}
+
+//検索ボックス
+.search_container input[type="text"]{
+  border: none;
+  height: 2.0em;
+  width: 260px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+.search_container input[type="text"]:focus {
+  outline: 0;
+}
+.search_container input[type="submit"]{
+  cursor: pointer;
+  font-size: 1.3em;
+  border: none;
+  background: none;
+  color: #3879D9;
+  position: absolute;
+  width: 2.5em;
+  height: 2.5em;
+  right: 0;
+  top: -10px;
+  outline : none;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+//ソート
+a.sort_header{
+  color: black;
+}
+a.current{
+    color: blue;
+}
+.asc:after{
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: " \f0de";
+}
+.desc:after{
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: " \f0dd";}

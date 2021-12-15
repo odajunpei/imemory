@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cake</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+    <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet" />
+  </head>
+  <body>
+    <strong id="notice2"><%= notice %></strong>
+    <div class="video-wrap">
+      <%= video_tag("/videos/top.mp4",autoplay: :true, muted: :true, class: 'top-video') %>
+       <div class="d-flex justify-content-end">
+          <nav class="navbar  navbar-expand-lg navbar-light ml-center gnav-top">
+            <ul class="navbar-nav ml-center">
+              <% if member_signed_in? %>
+                <li class="nav-item"><p class="fadein txt01 head-font"><%= link_to 'My page', members_path(current_member), class: "btn btn-warning" %></p></li>
+                <li class="nav-item"><p class="fadein txt01 head-font"><%= link_to 'Items', products_path, class: "btn btn-warning" %></p></li>
+                <li class="nav-item"><p class="fadein txt01 head-font"><%= link_to 'Cart', cart_products_path, class: "btn btn-warning" %></p></li>
+                <li class="nav-item"><p class="fadein txt01 head-font"><%= link_to "Log out", destroy_member_session_path, method: :delete, class: "btn btn-warning" %></p></li>
+              <% elsif admin_signed_in? %>
+                <li class="nav-item"><p class="fadein txt01 head-font"><%= link_to '商品一覧', admin_products_path , class: "btn btn-warning" %></p></li>
+                <li class="nav-item"><p class="fadein txt01 head-font"><%= link_to '会員一覧', admin_members_path, class: "btn btn-warning" %></p></li>
+                <li class="nav-item"><p class="fadein txt01 head-font"><%= link_to '注文履歴一覧', admin_orders_path, class: "btn btn-warning" %></p></li>
+                <li class="nav-item"><p class="fadein txt01 head-font"><%= link_to 'ジャンル一覧', admin_genres_path, class: "btn btn-warning" %></p></li>
+                <li class="nav-item"><p class="fadein txt01 head-font"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "btn btn-warning" %></p></li>
+              <% else %>
+                <li class="nav-item"><p class="fadein txt01 head-font"><%= link_to 'About', about_path, class: "btn btn-warning" %></p></li>
+                <li class="nav-item"><p class="fadein txt01 head-font"><%= link_to 'Items', products_path, class: "btn btn-warning" %></p></li>
+                <li class="nav-item"><p class="fadein txt01 head-font"><%= link_to 'Sign up', new_member_registration_path, class: "btn btn-warning" %></p></li>
+                <li class="nav-item"><p class="fadein txt01 head-font"><%= link_to 'Log in', member_session_path, class: "btn btn-warning" %></p></li>
+              <% end %>
+            </ul>
+          </nav>
+        </div>
+        <div class="space">
+        </div>
+        <div class="container-fuluid">
+          <div class="row">
+            <div class="col-md-12 flex-row pull-right d-inline">
+              <div class="left-space">
+                <%= image_tag 'new.jpg',class:'new fadein txt01' %>
+                <div class="yoko-top">
+                  <% @products.each do |product| %>
+                    <%= link_to product_path(product.id) do %>
+                      <h4 class="fadein txt01"><strong class="p-name-back"><%= product.name %></strong></h4>
+                      <p class="fadein txt01"><%= attachment_image_tag product, :image, fallback: "no_image.jpg", class:"fuwafuwa product-image enn" %></p>
+                    <% end %>
+                  <% end %>
+                  <%= link_to  products_path do %>
+                    <%= image_tag 'check.jpg', class:"finger fadein txt01" %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </body>

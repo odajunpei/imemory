@@ -1,0 +1,51 @@
+<div class="container">
+  <p class="page-title">items</p>
+  <div class="row">
+    <div class="col-md-10 flex-row">
+       <% if @products != "no_search" %>
+        <% if @product_name.present? || @gunre_name.present? %>
+          <h4>"<%= @product_name %><%= @gunre_name %>"で検索(全<%= @products.count %>件)</h4>
+        <% end %>
+        <div class="yoko">
+          <% @products.each do |product| %>
+            <div class="index-inner">
+              <%= link_to product_path(product.id) do %>
+                <div class="enn">
+                  <% if product.is_active? %>
+                    <%= attachment_image_tag product, :image, size:"200x200",format: 'jpeg', fallback:"no_image.jpg", class: "sold" %>
+                  <% else %>
+                    <%= attachment_image_tag product, :image, size:"200x200",format: 'jpeg', fallback:"no_image.jpg", class: "sold" %>
+                    <div class="soldout1"><img src="/assets/sold_out.png" width="100px" height="50px"></div>
+                  <% end %>
+                </div>
+                <p><%= product.name %></p>
+                <p>￥ <%= product.price.to_s(:delimited, delimiter: ',') %></p>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+        <%= paginate @products %>
+        <% else %>
+          <h4>"<%= @product_name %><%= @gunre_name %>"で該当する商品はありません。</h4>
+        <% end %>
+    </div>
+    <div class="col-md-2">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="genre-s-font">genres <i class="fas fa-search"></i></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @genres.each do |genre| %>
+        <tr>
+          <td>
+            <%= link_to "#{genre.name} (#{genre.products.count})", products_path(genre: genre.name) %>
+         </td>
+        </tr>
+      <% end %>
+      </tbody>
+     </table>
+    </div>
+  </div>
+</div>

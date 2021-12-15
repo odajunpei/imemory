@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-10 offset-1">
+      <p class="page-title">edit your information</p>
+      <%= form_with model:@member,url:"/members/myedit", local:true do |f| %>
+      <%= render "members/shared/error_messages", resource: @member %>
+        <table class="table">
+          <tr>
+            <th width="30%">
+              <%= f.label "氏名" %>
+            </th>
+            <td class= "input-group">
+              <%= f.text_field :last_name,required: true, class:"form-controls col-5" %>
+              <%= f.text_field :first_name,required: true, class:"ml-4 form-controls col-5" %>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <%= f.label "フリガナ(全角カタカナ)" %>
+            </th>
+            <td class= "input-group">
+              <%= f.text_field :last_name_kana,required: true, pattern: "[ァ-ヶー－]*", class:"form-controls col-5" %>
+              <%= f.text_field :first_name_kana,required: true, pattern: "[ァ-ヶー－]*", class:"ml-4 form-controls col-5" %>
+            </td>
+          </tr>
+          <tr>
+            <th><%= f.label "郵便番号(ハイフン無し)" %></th>
+            <td><%= f.text_field :postal_code,required: true, maxlength: 7,minlength: 7, class:"form-controls col-4" %></td>
+          </tr>
+          <tr>
+            <th><%= f.label "住所" %></th>
+            <td><%= f.text_field :address,required: true, class:"form-controls col-11" %></td>
+          </tr>
+          <tr>
+            <th><%= f.label "電話番号" %></th>
+            <td><%= f.number_field :telephone_number,required: true ,class:"no-spin form-controls col-4" %></td>
+          </tr>
+          <tr>
+            <th><%= f.label "メールアドレス" %></th>
+            <td><%= f.email_field :email,required: true, class:"form-controls col-11" %></td>
+          </tr>
+        </table>
+        <%= f.submit "変更内容を保存", class:"btn btn-success" %>
+        <%= link_to "退会する",members_leave_path, class:"btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,21 @@
+// Place all the styles related to the Search controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.search{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justfy-content: space-around;
+  align-items: center;
+  align-content: space-around;
+  text-align: center;
+}
+
+.search-inner{
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.danger{
+  color:red;
+}
